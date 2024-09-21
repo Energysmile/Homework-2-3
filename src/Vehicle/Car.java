@@ -1,4 +1,6 @@
-public class Car extends Vehicle {
+package Vehicle;
+
+public class Car extends EngineVehicle {
 
     public Car(String modelName, int wheelsCount) {
         super(modelName, wheelsCount);
