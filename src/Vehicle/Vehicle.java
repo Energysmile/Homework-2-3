@@ -1,4 +1,6 @@
-public class Vehicle {
+package Vehicle;
+
+public abstract class Vehicle implements Service{
     private String modelName;
     private int wheelsCount;
 
@@ -23,15 +25,23 @@ public class Vehicle {
         this.wheelsCount = wheelsCount;
     }
 
-    public void updateTyre() {
+    private void updateTyre() {
         System.out.println("Меняем покрышку");
     }
 
-    public void checkEngine() {
-        System.out.println("Проверяем двигатель");
+    @Override
+    public void check() {
+        System.out.println("Обслуживаем " + modelName);
+        for (int i = 0; i < wheelsCount; i++) {
+            updateTyre();
+        }
     }
 
-    public void checkTrailer() {
-        System.out.println("Проверяем прицеп");
+    @Override
+    public String toString() {
+        return "Vehicle.Vehicle{" +
+                "modelName='" + modelName + '\'' +
+                ", wheelsCount=" + wheelsCount +
+                '}';
     }
 }
